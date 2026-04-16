@@ -8,7 +8,8 @@ export default {
   // lets you organize them into sections and specify the order.
   pages: [
     {name: "Example dashboard", path: "/example-dashboard"},
-    {name: "Example report", path: "/example-report"}
+    {name: "Example report", path: "/example-report"},
+    {name: "Project Sketches", path: "/project"}
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:
