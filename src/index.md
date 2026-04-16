@@ -30,8 +30,9 @@ display(Plot.plot({
   marks: [
     Plot.lineY(launches, {x: "date", y: (d, i) => 50 + i * 0.5, stroke: "var(--theme-foreground)", tip: true})
   ],
-  y: {label: "↑ Awesomeness"},
+  y: {label: "↑ Awesomeness", tickFormat: "d"},
   width,
+  height: 300,
   nice: true,
 }));
 ```
@@ -59,6 +60,7 @@ display(Plot.plot({
   x: {label: "Flipper length (mm) →"},
   color: {legend: true},
   width,
+  height: 300,
   nice: true,
 }));
 ```
@@ -103,6 +105,18 @@ display(Plot.plot({
 
 @media (min-width: 640px) {
   .hero h1 { font-size: 90px; }
+}
+
+.grid .card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.grid .card h3 {
+  font-size: 1rem;
+  color: var(--theme-foreground-muted);
+  margin: 0 0 1rem;
 }
 
 </style>
