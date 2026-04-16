@@ -1,15 +1,14 @@
 // See https://observablehq.com/framework/config for documentation.
 export default {
   // The app's title; used in the sidebar and webpage titles.
-  title: "Framework Tutorial",
+  title: "Mikul's Framework",
 
   // The pages and sections in the sidebar. If you don't specify this option,
   // all pages will be listed in alphabetical order. Listing pages explicitly
   // lets you organize them into sections and specify the order.
   pages: [
-    {name: "Example report", path: "/example-report"},
     {name: "Example dashboard", path: "/example-dashboard"},
-    {name: "Project Sketches", path: "/project"}
+    {name: "Example report", path: "/example-report"}
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:

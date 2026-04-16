@@ -3,9 +3,67 @@ toc: false
 ---
 
 <div class="hero">
-  <h1>Framework Tutorial</h1>
-  <h2>A walkthrough of the <a href="https://observablehq.com/framework">Observable Framework</a> answering every exercise in the starter gist.</h2>
-  <a href="example-report">Open the example report <span style="display: inline-block; transform: translateY(-1px);">&rarr;</span></a>
+  <h1>Hello, Observable Framework</h1>
+  <h2>Welcome to your new project! Edit <code>src/index.md</code> to change this page.</h2>
+  <a href="https://observablehq.com/framework/getting-started">Get started <span style="display: inline-block; margin-left: 0.25rem;">↗</span></a>
+</div>
+
+```js
+import * as Plot from "npm:@observablehq/plot";
+```
+
+```js
+const launches = FileAttachment("launches.csv").csv({typed: true});
+```
+
+```js
+const penguins = FileAttachment("penguins.json").json();
+```
+
+<div class="grid grid-cols-2" style="margin-top: 2rem;">
+  <div class="card">
+    <h2>Your awesomeness over time 🚀</h2>
+    <h3>Up and to the right!</h3>
+
+```js
+display(Plot.plot({
+  marks: [
+    Plot.lineY(launches, {x: "date", y: (d, i) => 50 + i * 0.5, stroke: "var(--theme-foreground)", tip: true})
+  ],
+  y: {label: "↑ Awesomeness"},
+  width,
+  nice: true,
+}));
+```
+
+  </div>
+  <div class="card">
+    <h2>How big are penguins, anyway? 🐧</h2>
+
+```js
+display(Plot.plot({
+  marks: [
+    Plot.dot(penguins, {
+      x: "Flipper Length (mm)",
+      y: "Body Mass (g)",
+      stroke: "Species",
+      tip: true
+    }),
+    Plot.linearRegressionY(penguins, {
+      x: "Flipper Length (mm)",
+      y: "Body Mass (g)",
+      stroke: "Species"
+    })
+  ],
+  y: {label: "↑ Body mass (g)"},
+  x: {label: "Flipper length (mm) →"},
+  color: {legend: true},
+  width,
+  nice: true,
+}));
+```
+
+  </div>
 </div>
 
 <style>
@@ -31,8 +89,6 @@ toc: false
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200% 100%;
-  animation: gradient 6s linear infinite;
 }
 
 .hero h2 {
@@ -45,22 +101,8 @@ toc: false
   color: var(--theme-foreground-muted);
 }
 
-@keyframes gradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
 @media (min-width: 640px) {
   .hero h1 { font-size: 90px; }
 }
 
 </style>
-
-## What's inside
-
-This site demonstrates the features covered in the Observable Framework starter gist:
-
-- [**Example Report**](./example-report) — Markdown basics, frontmatter, styled headings, inline spans, classes
-- [**Example Dashboard**](./example-dashboard) — Loading data from a JS data loader (`launches.csv.js`)
-- [**Project Sketches**](./project) — Grid layouts, details/summary, sliders, Zip file attachments, custom loaders, and a scatter plot of GDP vs. life expectancy
-

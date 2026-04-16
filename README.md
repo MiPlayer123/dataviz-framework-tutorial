@@ -1,4 +1,4 @@
-# Framework Tutorial
+# Mikul's Tutorial
 
 An Observable Framework project that works through every exercise in the
 [starter gist](https://gist.github.com/samizdatco/4c17ecaeae8642f069580588d6334056).
